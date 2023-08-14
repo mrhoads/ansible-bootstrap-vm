@@ -1,0 +1,20 @@
+---
+- hosts: 127.0.0.1
+  name: Bootstrap Alma VM
+  connection: local
+  become: true
+  tasks:
+
+    - name: Add Public Keys
+      ansible.posix.authorized_key:
+        user: mrhoads
+        state: present
+        key: https://github.com/mrhoads.keys
+
+    - name: Install Standard Packages
+      ansible.builtin.dnf:
+        name:
+          - vim
+          - git
+          - nfs-utils
+        state: present

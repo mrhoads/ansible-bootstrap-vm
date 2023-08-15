@@ -10,9 +10,3 @@
         user: mrhoads
         state: present
         key: https://github.com/mrhoads.keys
-
-    - name: Install Standard Packages
-      ansible.builtin.dnf:
-        name:
-          - nfs-utils
-        state: present

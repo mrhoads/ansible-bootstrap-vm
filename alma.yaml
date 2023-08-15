@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: 127.0.0.1
   name: Bootstrap Alma VM
   connection: local
   become: true
